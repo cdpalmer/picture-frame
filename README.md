@@ -1,8 +1,7 @@
-# Picture::Frame
+# PictureFrame
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/picture/frame`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a gem to help organize and finding your debug statements in your server
+logs.
 
 ## Installation
 
@@ -22,7 +21,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+For this example, we will be dubugging `@account`.
+
+In your server code, you can use picture frame like so:
+
+```ruby
+PictureFrame.frame(@account.first_name, @account.email, @account.uuid)
+```
+
+And in your server, you will see this as an output:
+
+```
+ _____________________________
+| ._________________________. |
+| |                         | |
+| | Cody                    | |
+| | ----------------------  | |
+| | teampalmer.apps@gmail   | |
+| | .com                    | |
+| | ----------------------  | |
+| | 50691d7a-e6e7-4c45-     | |
+| | bd27-68553d639b87       | |
+| |                         | |
+| ._________________________. |
+ _____________________________
+```
 
 ## Development
 
@@ -32,7 +55,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/picture-frame.
+Bug reports and pull requests are welcome on GitHub at https://github.com/cdpalmer/picture-frame.
 
 
 ## License
