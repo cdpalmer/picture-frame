@@ -2,6 +2,8 @@ require "picture/frame/version"
 
 module Picture
   module Frame
-    # Your code goes here...
+    def self.frame(text)
+      "| | #{text} | |"
+    end
   end
 end
